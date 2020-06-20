@@ -1,18 +1,14 @@
-fetch("https://covid-193.p.rapidapi.com/statistics", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "covid-193.p.rapidapi.com",
-		"x-rapidapi-key": "510f15014bmsh6ce0dd84c132d79p116676jsna21790da67cc"
-	}
-})
-.then(response => response.ok ? response.json() : console.log("Error"))
-.then(data =>{
-    console.log(data);
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://covid-193.p.rapidapi.com/statistics",
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "covid-193.p.rapidapi.com",
+        "x-rapidapi-key": "d6a3a44921msh729ef7ac547d6cep1f6aa3jsn48332191f917"
+    }
+}
 
-    document.querySelector("body").textContent = JSON.stringify(data);
-})
-.catch(err => {
-	console.log(err);
+$.ajax(settings).done(function(response) {
+    console.log(response);
 });
-
-
