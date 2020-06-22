@@ -10,10 +10,7 @@ var settings = {
 }
 
 $.ajax(settings).done(function(response) {
-    console.log(response);
-});
-
-$.ajax(settings).done(function(response) {
             for (var i = 0; i < response.length; i++) {
                 console.log(response[i]);
                 $("<p>Small test</p>")
+            });
