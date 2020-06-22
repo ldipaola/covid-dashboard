@@ -9,7 +9,7 @@ fetch("https://covid-193.p.rapidapi.com/statistics", {
 .then(data =>{
     console.log(data);
 
-    document.querySelector("body").textContent = JSON.stringify(data);
+    document.querySelector("#currentCountry").textContent = JSON.stringify(data);
 })
 .catch(err => {
 	console.log(err);
