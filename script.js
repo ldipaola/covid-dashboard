@@ -9,8 +9,24 @@ var settings = {
     }
 }
 
+//default print all fields
 $.ajax(settings).done(function(response) {
-            for (var i = 0; i < response.length; i++) {
-                console.log(response[i]);
-                $("<p>Small test</p>")
-            });
+    //print full array 
+    var dataArray = response.response;
+    console.log(dataArray);
+    $.each(dataArray, function(index, value) {
+        $("#frame1").empty();
+        var continent = console.log(value.continent);
+        var country = console.log(value.country);
+        $("#frame1").append("<option value='" + continent + "'>" + country + "</option>");
+
+    });
+    // console.log(value);
+    // console.log(value.country);
+    // console.log(value.cases.new);
+    // console.log(value.cases.active);
+    // console.log(value.cases.recovered);
+    // return (value !== 'three');
+    // );
+
+});
