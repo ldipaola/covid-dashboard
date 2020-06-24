@@ -12,21 +12,39 @@ var settings = {
 //default print all fields
 $.ajax(settings).done(function(response) {
     //print full array 
+    console.log(response);
     var dataArray = response.response;
-    console.log(dataArray);
-    $.each(dataArray, function(index, value) {
-        $("#frame1").empty();
-        var continent = console.log(value.continent);
-        var country = console.log(value.country);
-        $("#frame1").append("<option value='" + continent + "'>" + country + "</option>");
+    var table = $('<table>');
+    var tr = $('<tr>');
+    var th1 = $('<th>').text('Country');
+    var th2 = $('<th>').text('Total Cases');
+    var th3 = $('<th>').text('Deaths');
+    var th4 = $('<th>').text('New Cases');
+    table.append(tr);
+    tr.append(th1, th2, th3, th4);
 
-    });
-    // console.log(value);
-    // console.log(value.country);
-    // console.log(value.cases.new);
-    // console.log(value.cases.active);
-    // console.log(value.cases.recovered);
-    // return (value !== 'three');
-    // );
+    //sort response by number of cases highest to lowest
+    var sortedData = dataArray.sort((a,b) => b.cases.total - a.cases.total)
+
+    var count = 0;
+    var index = 0;
+    while (count < 10){
+
+        if(sortedData[index].continent === sortedData[index].country){
+        index++
+        continue;
+        }
+        var tr = $('<tr>');
+        var td1 = $('<td>').text(sortedData[index].country);
+        var td2 = $('<td>').text(sortedData[index].cases.total);
+        var td3 = $('<td>').text(sortedData[index].deaths.total);
+        var td4 = $('<td>').text(sortedData[index].cases.new);
+        tr.append(td1,td2,td3,td4);
+        table.append(tr);
+        index++
+        count++;
+    }
+
+    $('#frame2').append(table);
 
 });
