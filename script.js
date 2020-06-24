@@ -34,10 +34,12 @@ $.ajax(settings).done(function(response) {
         index++
         continue;
         }
+        var totalCases = sortedData[index].cases.total.toLocaleString();
+        var totalDeaths = sortedData[index].deaths.total.toLocaleString();
         var tr = $('<tr>');
         var td1 = $('<td>').text(sortedData[index].country);
-        var td2 = $('<td>').text(sortedData[index].cases.total);
-        var td3 = $('<td>').text(sortedData[index].deaths.total);
+        var td2 = $('<td>').text(totalCases);
+        var td3 = $('<td>').text(totalDeaths);
         var td4 = $('<td>').text(sortedData[index].cases.new);
         tr.append(td1,td2,td3,td4);
         table.append(tr);
