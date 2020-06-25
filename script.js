@@ -1,3 +1,5 @@
+$(function() {
+
 var settings = {
     "async": true,
     "crossDomain": true,
@@ -12,7 +14,6 @@ var settings = {
 //default print all fields
 $.ajax(settings).done(function(response) {
     //print full array 
-    console.log(response);
     var dataArray = response.response;
     var table = $('<table>');
     var tr = $('<tr>');
@@ -25,7 +26,8 @@ $.ajax(settings).done(function(response) {
 
     //sort response by number of cases highest to lowest
     var sortedData = dataArray.sort((a,b) => b.cases.total - a.cases.total)
-
+    var labels1 = [];
+    var data1 = [];
     var count = 0;
     var index = 0;
     while (count < 10){
@@ -34,6 +36,8 @@ $.ajax(settings).done(function(response) {
         index++
         continue;
         }
+        labels1.push(sortedData[index].country);
+        data1.push(sortedData[index].cases.total);
         var totalCases = sortedData[index].cases.total.toLocaleString();
         var totalDeaths = sortedData[index].deaths.total.toLocaleString();
         var tr = $('<tr>');
@@ -45,8 +49,70 @@ $.ajax(settings).done(function(response) {
         table.append(tr);
         index++
         count++;
+        
     }
+    
+
+
+    
+
 
     $('#frame2').append(table);
+
+    var ctx = $('#covid-chart');
+    // var labels1 = sortedData.map(function(e) {
+    //     return e.country
+    // });
+    // var data1 = sortedData.map(function(e) {
+    //     return e.cases.total
+    // });
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels1,
+            datasets: [{
+                label: 'Total Cases',
+                data: data1,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(26, 19, 64, 0.2)',
+                    'rgba(45, 196, 164, 0.2)',
+                    'rgba(60, 20, 64, 0.2)',
+                    'rgba(205, 70, 64, 0.2)'
+                    
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(26, 19, 64, 1)',
+                    'rgba(45, 196, 164, 1)',
+                    'rgba(60, 20, 64, 1)',
+                    'rgba(205, 70, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+});
 
 });
