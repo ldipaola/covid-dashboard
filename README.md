@@ -11,14 +11,14 @@ This website is a live render of all the countries around the world that are hav
 ### New Features!
 
 -   Importing data and statistics from third party API which allow us to access their functionality via jquery to us on our site.
--   Showing the hotspots map where are the new and active Covid-19 cases around the globe.
+-   Showing the hotspots map where are the new and active COVID-19 cases around the globe.
 -   There is graph which showing the hight and low peak point of the active cases
 
-You can also:
+You can also search:
 
-- search for specific location
-- Be aware of Hygiene
-- Find the Covid-19 symptoms
+- Specific Location
+- COVID-19 Preventions
+- COVID-19 Symptoms
 
 ### Our Team Members:
 - Lihuor Slot
@@ -29,5 +29,5 @@ You can also:
 
 ## Links:
 ```sh
-https://rapidapi.com/blog/developers-respond-to-covid-19/
+https://rapidapi.com/blog/developers-respond-to-COVID-19/
 ```
