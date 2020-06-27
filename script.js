@@ -115,4 +115,6 @@ $.ajax(settings).done(function(response) {
 
 });
 
+// Creating the current Date
+$("#currentDate").text(moment().format('LLL'));
 });
