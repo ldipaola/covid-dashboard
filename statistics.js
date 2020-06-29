@@ -2,7 +2,7 @@ $(function() {
 
 Chart.defaults.line.spanGaps = true;
 
-
+getCountryStats('Australia');
 
 function getCountryStats (userInput) {
 
