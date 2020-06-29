@@ -14,13 +14,13 @@ Project presentation
 
 ## Used features:
 
-- [RapidAPI]: https://rapidapi.com/blog/developers-respond-to-covid-19/
-- [GoogleAPI]: https://developers.google.com/api-client-library
-- [jQuery]: https://jqueryui.com/
-- [Ajax/jQuery]:[ ](https://api.jquery.com/jquery.ajax/)
-- [Chart.js]: https://www.chartjs.org/
-- [Materialize CSS]: https://materializecss.com/
-- [RapidAPI for Covid-19]: https://rapidapi.com/api-sports/api/covid-193?endpoint=apiendpoint_2feca6f0-0f58-40b7-9196-98c45c7d5083
+- RapidAPI: https://rapidapi.com/blog/developers-respond-to-covid-19/
+- GoogleAPI: https://developers.google.com/api-client-library
+- jQuery: https://jqueryui.com/
+- Ajax/jQuery: https://api.jquery.com/jquery.ajax/
+- Chart.js: https://www.chartjs.org/
+- Materialize CSS: https://materializecss.com/
+- RapidAPI for Covid-19: https://rapidapi.com/api-sports/api/covid-193?endpoint=apiendpoint_2feca6f0-0f58-40b7-9196-98c45c7d5083
   
 ### New Features!
 
@@ -38,7 +38,7 @@ You can also search:
 
 - Lihuor Slot
 - Louise Cerdeira
-- Lucas Idipaola
+- Lucas Di Paola
 - Yvette Waller
 
 ## Project Link for deploy:
