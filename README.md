@@ -38,7 +38,7 @@ You can also search:
 
 - Lihuor Slot
 - Louise Cerdeira
-- Lucas Idipaola
+- Lucas Di Paola
 - Yvette Waller
 
 ## Project Link for deploy:
