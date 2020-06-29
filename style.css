@@ -1,3 +1,20 @@
 .card .card-content{
     margin: 100px;
 }
+#currentDate{
+    font-size: large;
+    font-weight: bolder;
+    position: absolute;
+    right: 10px;
+    color: blue;
+}
+small{
+    text-align: center;
+}
+img.img-container{
+    text-align: center;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}

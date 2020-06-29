@@ -1,18 +1,17 @@
+<!DOCTYPE html>
 <!-- 
 =========================================================
- Bootcamp project - v0.0.1
+Boot Camp project - v0.0.1
 =========================================================
 
- Project Page: 
+Project Page: 
 
- Coded by US with Love
+Coded by US with Love
 
 =========================================================
 
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
-<!DOCTYPE html>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,42 +29,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Covid-19 Dashboard</title>
+    <title>COVID-19 Dashboard</title>
 </head>
 
 <body>
-    <!-- Top Navbar -->
+    <!-- Top Navbar index, resources, hygiene-->
     <nav>
-<!--creating-resources-hygiene-->
-        <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Coronavirus (COVID-19) Information</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="index.html">Hot spot Locations</a></li>
-            <li><a href="index.html">Statistics</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="hygiene.html">Hygiene Procedures</a></li>
-        </ul>
-=======
         <div class="nav-wrapper" color="white" background-color="black">
-            <a href="#" class="brand-logo">Coronavirus (SARS-CoV2) Information</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-                <li><a href="index.html">Hot spot Location</a></li>
-                <li><a href="sass.html">Statistics</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="hygiene.html">Hygiene Procedures</a></li>
-            </ul>
+            <a href="#" class="brand-logo">Coronavirus (COVID-19) Information</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html">Hot spot Locations</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="hygiene.html">Hygiene Procedures</a></li>
+                </ul>
         </div>
     </nav>
+    <div id="currentDate"></div>
+    <!-- Page Content goes here -->
     <div class="container">
         <div class="card grey">
             <div id="map" class="card-content white-text">
                 <span class="card-title" id="currentCountry">Current hot spot map</span>
             </div>
         </div>
-        <!-- Page Content goes here -->
     </div>
-
     <div class="row">
         <div class="col s6">
             <div class="card grey">
@@ -73,7 +60,9 @@
                     <span class="card-title">Graph Statistics</span>
                     <p class="card-category"></p>
                     <div class="card-header ">
-                        <div id="frame1" style="height: 79vh"><canvas id="covid-chart" width="400" height="400"></canvas></div>
+                        <div id="frame1" style="height: 79vh">
+                            <canvas id="covid-chart" width="400" height="400"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,21 +78,25 @@
                 </div>
             </div>
         </div>
-
-        <!-- Creating the Footer -->
-        <footer class="page-footer black">
-            <div class="container">
-                <div class="row">
-                    <div class="col s12">
-                        <h5 class="white-text">Team Bio</h5>
-                        <p class="grey-text text-lighten-4">We are a Covid-19 fighting team who working on this project like it's our full time job. Any contribution would help support and continue development o this project and is greatly appreciated.</p>
-                    </div>
-                </div>
+    </div>
+<!-- Creating the Footer -->
+<footer class="page-footer black">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h5 class="white-text">Team Bio</h5>
+                <p class="grey-text text-lighten-4">We are a COVID-19 fighting team who working on this project like it's our full time job. Any contribution would help support and continue development o this project and is greatly appreciated.</p>
             </div>
-        </footer>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <script src="script.js" type="text/javascript"></script>
+        </div>
+    </div>
+    <small id="copyRight"><p> &copy; Copyright 2020, All rights reserves, Quarantine Team</p></small>
+</footer>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="materialize/js/materialize.js"></script>
+<script src="materialize/starter-template/js/init.js"></script>
+<script src="script.js" type="text/javascript"></script>
 </body>
 </html>
