@@ -1,17 +1,27 @@
-.card .card-content{
+.card .card-content {
     margin: 100px;
 }
-#currentDate{
+
+
+/* body,
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+} */
+
+#currentDate {
     font-size: large;
     font-weight: bolder;
     position: absolute;
     right: 10px;
     color: blue;
 }
-small{
+
+small {
     text-align: center;
 }
-img.img-container{
+
+img.img-container {
     text-align: center;
     display: block;
     position: relative;
