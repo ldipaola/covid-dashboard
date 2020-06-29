@@ -37,7 +37,7 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Top Navbar index, resources, hygiene-->
     <nav>
         <div class="nav-wrapper" color="white" background-color="black">
-            <a href="#" class="brand-logo">Coronavirus (COVID-19) Information</a>
+            <a href="#" class="brand-logo">Coronavirus (COVID-19) Informations</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.html">Main dashboard</a></li>
                 <li><a href="statistics.html">Statistics</a></li>
@@ -46,12 +46,13 @@ The above copyright notice and this permission notice shall be included in all c
             </ul>
         </div>
     </nav>
-    <div id="currentDate" class="grey white-text" style="padding: 0.5em; border-radius: 2px;"></div>
+    <div id="currentDate" style="padding: 0.5em; border-radius: 2px;"></div>
     <!-- Page Content goes here -->
     <div class="container">
-        <div class="card grey">
-            <div id="map" class="card-content white-text">
-                <span class="card-title" id="currentCountry">Hot spot map</span>
+        <div class="card white">
+            <div class="card-content white-text">
+                <!-- <span class="card-title" id="currentCountry">Hot spot map</span> -->
+                <div id="map" style="height: 79vh"></div>
             </div>
         </div>
     </div>
@@ -96,12 +97,14 @@ The above copyright notice and this permission notice shall be included in all c
         </small>
     </footer>
     <!-- Compiled and minified JavaScript -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="materialize/js/materialize.js"></script>
     <script src="materialize/starter-template/js/init.js"></script>
     <script src="script.js" type="text/javascript"></script>
+    <script src="map.js" type="text/javascript"></script>
 </body>
 
 </html>
