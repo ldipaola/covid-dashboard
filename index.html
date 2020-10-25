@@ -60,18 +60,25 @@ The above copyright notice and this permission notice shall be included in all c
   <body>
     <!-- Top Navbar index, resources, hygiene-->
     <nav>
-      <div class="nav-wrapper deep-purple darken-1" color="white">
-        <a href="index.html" class="brand-logo"
-          >Coronavirus (COVID-19) Dashboard</a
-        >
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="active"><a href="index.html">Main dashboard</a></li>
+        <div class="nav-wrapper deep-purple darken-1" color="white">
+          <a href="index.html" class="brand-logo"
+            >Coronavirus (COVID-19) Dashboard</a
+          >
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="hygiene.html">Hygiene Procedures</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
           <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="hygiene.html">Hygiene Procedures</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="hygiene.html">Hygiene Procedures</a></li>
         </ul>
-      </div>
-    </nav>
     <div id="currentDate" style="padding: 0.5em; border-radius: 2px"></div>
     <!-- Page Content goes here -->
           <div id="map" class="container" style="width: 90%; height: 80vh"></div>
