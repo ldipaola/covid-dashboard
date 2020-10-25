@@ -2,21 +2,6 @@
     margin: 100px;
 }
 
-
-/* body,
-.wrapper {
-    min-height: 100vh;
-    position: relative;
-} */
-
-#currentDate {
-    font-size: large;
-    font-weight: bolder;
-    position: absolute;
-    right: 10px;
-    color: blue;
-}
-
 small {
     text-align: center;
 }
