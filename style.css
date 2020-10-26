@@ -20,3 +20,6 @@ a.brand-logo {
 .row {
     margin-bottom: 0;
 }
+#currentDate {
+    margin: 0.5em 0 1em 8px; 
+}
