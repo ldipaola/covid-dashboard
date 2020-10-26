@@ -1,3 +1,7 @@
+body {
+    background-color: #F9F9F9;
+}
+
 .card .card-content {
     margin: 100px;
 }
@@ -12,4 +16,7 @@ img.img-container {
     position: relative;
     margin-left: auto;
     margin-right: auto;
+}
+a.brand-logo {
+    margin-left: 8px;
 }

@@ -60,32 +60,36 @@ The above copyright notice and this permission notice shall be included in all c
   <body>
     <!-- Top Navbar index, resources, hygiene-->
     <nav>
-        <div class="nav-wrapper deep-purple darken-1" color="white">
-          <a href="index.html" class="brand-logo"
+        <div class="nav-wrapper white">
+          <a class="brand-logo black-text" href="index.html"
             >Coronavirus (COVID-19) Dashboard</a
           >
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="statistics.html">Statistics</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="hygiene.html">Hygiene Procedures</a></li>
+            <li class="active"><a class="black-text" href="index.html">Home</a></li>
+            <li><a class="black-text" href="statistics.html">Statistics</a></li>
+            <li><a class="black-text" href="resources.html">Resources</a></li>
+            <li><a class="black-text" href="hygiene.html">Hygiene Procedures</a></li>
           </ul>
         </div>
       </nav>
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="index.html">Home</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="hygiene.html">Hygiene Procedures</a></li>
+        <li><a class="black-text" href="index.html">Home</a></li>
+          <li><a class="black-text" href="statistics.html">Statistics</a></li>
+            <li><a class="black-text" href="resources.html">Resources</a></li>
+            <li><a class="black-text" href="hygiene.html">Hygiene Procedures</a></li>
         </ul>
     <div id="currentDate" style="padding: 0.5em; border-radius: 2px"></div>
     <!-- Page Content goes here -->
           <div id="map" class="container" style="width: 90%; height: 80vh"></div>
           <script>
+            fetch("https://corona.lmao.ninja/v2/countries?yesterday=&sort=").then(response => {
+              const data = response.json()
+              console.log(data);
+            }); 
             mapboxgl.accessToken =
               "pk.eyJ1IjoibHVrZXk4OCIsImEiOiJja2Z0eGI4eGcwdWhzMnRtdDc4Z2lrMTVoIn0.1C1oHpJeoVInABgwd7pVVg";
-            var map = new mapboxgl.Map({
+            const map = new mapboxgl.Map({
               container: "map",
               style: "mapbox://styles/mapbox/dark-v10", // stylesheet location
               center: [134.273, -26.273], // starting position [lng, lat]
