@@ -1,20 +1,9 @@
-.card .card-content {
-    margin: 100px;
+body {
+    background-color: #F9F9F9;
 }
 
-
-/* body,
-.wrapper {
-    min-height: 100vh;
-    position: relative;
-} */
-
-#currentDate {
-    font-size: large;
-    font-weight: bolder;
-    position: absolute;
-    right: 10px;
-    color: blue;
+.card .card-content {
+    margin: 100px;
 }
 
 small {
@@ -27,4 +16,7 @@ img.img-container {
     position: relative;
     margin-left: auto;
     margin-right: auto;
+}
+a.brand-logo {
+    margin-left: 8px;
 }

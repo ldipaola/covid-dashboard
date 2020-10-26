@@ -14,6 +14,7 @@ var settings = {
 //default print all fields
 $.ajax(settings).done(function(response) {
     //print full array 
+    console.log(response);
     var dataArray = response.response;
     var table = $('<table>');
     var tr = $('<tr>');

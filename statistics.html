@@ -31,25 +31,33 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
      <link rel="stylesheet" type="text/css" href="statistics.css">
+     <link rel="stylesheet" type="text/css" href="style.css">
      <title>Covid-19 Dashboard</title>
  </head>
  
  <body>
      <!-- Top Navbar -->
      <main>
-         <nav>
-     <!--creating-resources-hygiene-->
-             <div class="nav-wrapper">
-             <a href="#" class="brand-logo">Coronavirus (COVID-19) Information</a>
-             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="index.html">Main dashboard</a></li>
-                <li><a href="statistics.html">Statistics</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="hygiene.html">Hygiene Procedures</a></li>
-             </ul>
-             </div>
-         </nav>
-    
+      <nav>
+        <div class="nav-wrapper white">
+          <a class="brand-logo black-text" href="index.html"
+            >Coronavirus (COVID-19) Dashboard</a
+          >
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="black-text" href="index.html">Home</a></li>
+            <li class="active"><a class="black-text" href="statistics.html">Statistics</a></li>
+            <li><a class="black-text" href="resources.html">Resources</a></li>
+            <li><a class="black-text" href="hygiene.html">Hygiene Procedures</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a class="black-text" href="index.html">Home</a></li>
+          <li><a class="black-text" href="statistics.html">Statistics</a></li>
+            <li><a class="black-text" href="resources.html">Resources</a></li>
+            <li><a class="black-text" href="hygiene.html">Hygiene Procedures</a></li>
+        </ul>
          <div class="row">
     
             <div class="col s12 m12  l2 grey darken-4">
