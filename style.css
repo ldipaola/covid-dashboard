@@ -6,10 +6,6 @@ body {
     margin: 100px;
 }
 
-small {
-    text-align: center;
-}
-
 img.img-container {
     text-align: center;
     display: block;
@@ -19,4 +15,8 @@ img.img-container {
 }
 a.brand-logo {
     margin-left: 8px;
+}
+
+.row {
+    margin-bottom: 0;
 }
