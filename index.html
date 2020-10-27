@@ -91,7 +91,7 @@ The above copyright notice and this permission notice shall be included in all c
                 new mapboxgl.Marker({})
               .setLngLat([element.countryInfo.long, element.countryInfo.lat])
               .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-               .setHTML('<h5>' + element.country + '</h5><p>Cases: ' + element.cases + '</p>'))
+               .setHTML('<h5>' + element.country + '</h5><p>Cases: ' + element.cases.toLocaleString() + '</p>'))
               .addTo(map);   
               });
             })
