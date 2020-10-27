@@ -2,7 +2,7 @@
 
 This website is a live render of all the countries around the world that are having high numbers of cases of infections and deaths. In particular, it points out the top five countries with the highest number of cases.
 
-![Alt text](screen_sample.png?raw=true "Project main page")
+![Alt text](screen_img.png?raw=true "Project main page")
 
 Project presentation
 
