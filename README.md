@@ -43,5 +43,5 @@ You can also search:
 
 ## Project Link for deploy:
 ```sh
-https://ldipaola.github.io/bootcamp-project-1/
+https://ldipaola.github.io/covid-dashboard/
 ```
