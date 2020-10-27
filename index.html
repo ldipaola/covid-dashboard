@@ -83,10 +83,18 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Page Content goes here -->
           <div id="map" class="container" style="width: 90%; height: 80vh"></div>
           <script>
-            fetch("https://corona.lmao.ninja/v2/countries?yesterday=&sort=").then(response => {
-              const data = response.json()
+            fetch("https://corona.lmao.ninja/v2/countries?yesterday=&sort=")
+            .then(response => response.json())
+            .then(data => {
               console.log(data);
-            }); 
+              data.forEach(element => {
+                new mapboxgl.Marker({})
+              .setLngLat([element.countryInfo.long, element.countryInfo.lat])
+              .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+               .setHTML('<img src='+element.countryInfo.flag +' width=60 height=35>' + '<h5>' + element.country + '</h5><p class="popup-text">Cases: ' + element.cases.toLocaleString() + '</p>' + '<p class="popup-text">active cases: ' + element.active.toLocaleString() + '</p>' + '<p class="popup-text">deaths: ' + element.deaths.toLocaleString() + '</p>' + '<p class="popup-text">population: ' + element.population.toLocaleString() + '</p>'))
+              .addTo(map);   
+              });
+            })
             mapboxgl.accessToken =
               "pk.eyJ1IjoibHVrZXk4OCIsImEiOiJja2Z0eGI4eGcwdWhzMnRtdDc4Z2lrMTVoIn0.1C1oHpJeoVInABgwd7pVVg";
             const map = new mapboxgl.Map({
