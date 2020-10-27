@@ -27,7 +27,10 @@ a.brand-logo {
 .mapboxgl-popup {
   max-width: 200px;
 }
-
+.popup-text {
+    margin: 0;
+    text-align: left;
+}
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
