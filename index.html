@@ -83,10 +83,16 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Page Content goes here -->
           <div id="map" class="container" style="width: 90%; height: 80vh"></div>
           <script>
-            fetch("https://corona.lmao.ninja/v2/countries?yesterday=&sort=").then(response => {
-              const data = response.json()
+            fetch("https://corona.lmao.ninja/v2/countries?yesterday=&sort=")
+            .then(response => response.json())
+            .then(data => {
               console.log(data);
-            }); 
+              data.forEach(element => {
+                new mapboxgl.Marker({})
+              .setLngLat([element.countryInfo.long, element.countryInfo.lat])
+              .addTo(map);   
+              });
+            })
             mapboxgl.accessToken =
               "pk.eyJ1IjoibHVrZXk4OCIsImEiOiJja2Z0eGI4eGcwdWhzMnRtdDc4Z2lrMTVoIn0.1C1oHpJeoVInABgwd7pVVg";
             const map = new mapboxgl.Map({
