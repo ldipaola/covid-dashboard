@@ -129,6 +129,11 @@ $.ajax(settings).done(function (response) {
           ]
         },
         options: {
+            elements: {
+              point: {
+                radius: 0
+              }
+            },
             responsive: true,
             tooltips: {
               callbacks: {
@@ -183,6 +188,11 @@ $.ajax(settings).done(function (response) {
           ]
         },
         options: {
+          elements: {
+            point: {
+              radius: 0
+            }
+          },
             responsive: true,
             tooltips: {
               callbacks: {
