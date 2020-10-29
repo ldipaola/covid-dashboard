@@ -2,8 +2,19 @@ body {
   background-color: #f9f9f9;
 }
 
-.card .card-content {
-  margin: 100px;
+div.card-content.white-text{
+  overflow: hidden;
+  padding: 4px;
+}
+div.card.main-card {
+  margin-top: 0;
+}
+
+div.col.covid-stats {
+  padding-right: 0;
+}
+div.col.covid-map {
+  padding-left: 0;
 }
 
 img.img-container {
@@ -34,4 +45,17 @@ a.brand-logo {
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+}
+
+td {
+  color: red;
+  font-weight: bold;
+}
+
+td.country-text {
+  color: white;
+}
+
+.card.main-card {
+  background-color: #343332;
 }
