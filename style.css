@@ -10,13 +10,6 @@ div.card.main-card {
   margin-top: 0;
 }
 
-div.col.covid-stats {
-  padding-right: 0;
-}
-div.col.covid-map {
-  padding-left: 0;
-}
-
 img.img-container {
   text-align: center;
   display: block;
@@ -58,4 +51,9 @@ td.country-text {
 
 .card.main-card {
   background-color: #343332;
+}
+
+.row.main-content {
+  height: 100%;
+  margin-bottom: 8px;
 }
