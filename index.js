@@ -59,7 +59,7 @@ async function renderStatistics(data) {
     const th1 = document.createElement('th');
     th1.textContent = 'Country';
     const th2 = document.createElement('th');
-    th2.textContent = 'Total Cases';
+    th2.textContent = 'Cases';
     const th3 = document.createElement('th');
     th3.textContent = 'Deaths';
     table.append(tr);
