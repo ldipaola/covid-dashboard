@@ -10,13 +10,6 @@ div.card.main-card {
   margin-top: 0;
 }
 
-div.col.covid-stats {
-  padding-right: 0;
-}
-div.col.covid-map {
-  padding-left: 0;
-}
-
 img.img-container {
   text-align: center;
   display: block;
@@ -58,4 +51,37 @@ td.country-text {
 
 .card.main-card {
   background-color: #343332;
+}
+
+.row.main-content {
+  height: 100%;
+  margin-bottom: 8px;
+}
+#stat-sidebar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 83.5vh;
+  
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #5C5C5C 404040;
+}
+
+/* custom scroll bar style */
+#stat-sidebar::-webkit-scrollbar {
+  width: 12px;
+}
+#stat-sidebar::-webkit-scrollbar-track {
+  background: #404040;
+}
+#stat-sidebar::-webkit-scrollbar-thumb {
+  background-color: #5C5C5C;
+  border-radius: 20px;
+  border: 3px solid #404040;
+}
+
+td, th {
+  padding: 4px;
 }
