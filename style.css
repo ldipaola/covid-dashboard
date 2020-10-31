@@ -57,3 +57,7 @@ td.country-text {
   height: 100%;
   margin-bottom: 8px;
 }
+#stat-sidebar {
+  overflow-y: scroll;
+  height: 83.5vh;
+}
