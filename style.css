@@ -98,3 +98,6 @@ td.country-text {
 td, th {
   padding: 4px;
 }
+.brand-logo.black-text {
+  font-size: clamp(12.5px, 5vw, 25px);
+}
