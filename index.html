@@ -28,7 +28,7 @@ The above copyright notice and this permission notice shall be included in all c
     />
     <!--     Fonts and icons     -->
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
+      href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700"
       rel="stylesheet"
     />
     <link
@@ -54,15 +54,15 @@ The above copyright notice and this permission notice shall be included in all c
       href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
       rel="stylesheet"
     />
-    <title>COVID-19 Dashboard</title>
+    <title>Coronavirus (COVID-19)</title>
   </head>
 
   <body>
     <!-- Top Navbar index, resources, hygiene-->
-    <nav>
-        <div class="nav-wrapper white">
+    <nav class="nav-bar">
+        <div class="nav-wrapper">
           <a class="brand-logo black-text" href="index.html"
-            >Coronavirus (COVID-19) Dashboard</a
+            >COVID-19 Tracker</a
           >
           <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -82,15 +82,15 @@ The above copyright notice and this permission notice shall be included in all c
     <div id="currentDate"></div>
     <!-- Page Content goes here -->
           <div class="row main-content">
-            <div class="col s3 covid-stats">
+            <div class="col s3">
               <div class="card main-card">
                 <div class="card-content white-text">
                   <p class="card-category center-align">Cases by Country</p>
-                    <div id="stat-sidebar"></div>
+                    <div id="stat-sidebar" style="height: 80.5vh;"></div>
                 </div>
               </div>
             </div>
-            <div class="col s9 covid-map"><div id="map" class="container" style="width: auto; height: 85vh"></div></div>
+            <div class="col s9"><div id="map"></div></div>
           </div>
           <script>
             

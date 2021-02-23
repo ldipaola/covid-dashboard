@@ -1,5 +1,6 @@
 body {
-  background-color: #f9f9f9;
+  background-color: #c8c8c8;
+  font-family: 'Montserrat', sans-serif;
 }
 
 div.card-content.white-text{
@@ -8,6 +9,10 @@ div.card-content.white-text{
 }
 div.card.main-card {
   margin-top: 0;
+}
+nav {
+  background-color: #f0f0f0;
+  font-weight: 500;
 }
 
 img.img-container {
@@ -40,6 +45,14 @@ a.brand-logo {
   font-family: "Open Sans", sans-serif;
 }
 
+#map {
+  width: auto; 
+  height: 83.5vh;
+}
+.card.main-card {
+  height: 83.5vh;
+}
+
 td {
   color: red;
   font-weight: bold;
@@ -53,14 +66,14 @@ td.country-text {
   background-color: #343332;
 }
 
+
 .row.main-content {
-  height: 100%;
+  height: 90vh;
   margin-bottom: 8px;
 }
 #stat-sidebar {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 83.5vh;
   
 }
 
