@@ -4,6 +4,11 @@ Chart.defaults.line.spanGaps = true;
 
 getCountryStats('Australia');
 
+function addCommas(number) {
+  if (number === null) return 0
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function getCountryStats (userInput) {
 
 var settings = {
@@ -27,6 +32,7 @@ $('#chart-container3').append($('<div class="lds-roller"><div></div><div></div><
 
 
 $.ajax(settings).done(function (response) {
+  console.log(response);
     $('#country-stat').empty();
     var table = $('<table>');
     var tr1 = $('<tr>');
@@ -44,18 +50,18 @@ $.ajax(settings).done(function (response) {
     var tr13 = $('<tr>');
     var tr14 = $('<tr>');
     var td1 = $('<td>').text(response.response[0].country);
-    var td2 = $('<td>').text(response.response[0].cases.total.toLocaleString());
+    var td2 = $('<td>').text(addCommas(response.response[0].cases.total));
     var td3 = $('<td>').text(response.response[0].cases.new);
-    var td4 = $('<td>').text(response.response[0].deaths.total.toLocaleString());
+    var td4 = $('<td>').text(addCommas(response.response[0].deaths.total));
     var td5 = $('<td>').text(response.response[0].deaths.new);
-    var td6 = $('<td>').text(response.response[0].cases.recovered.toLocaleString());
-    var td7 = $('<td>').text(response.response[0].cases.active.toLocaleString());
-    var td8 = $('<td>').text(response.response[0].cases.critical.toLocaleString());
-    var td9 = $('<td>').text(parseFloat(response.response[0].cases["1M_pop"]).toLocaleString());
-    var td10 = $('<td>').text(parseFloat(response.response[0].deaths["1M_pop"]).toLocaleString());
-    var td11 = $('<td>').text(response.response[0].tests.total.toLocaleString());
-    var td12 = $('<td>').text(parseFloat(response.response[0].tests["1M_pop"]).toLocaleString());
-    var td13 = $('<td>').text(response.response[0].population.toLocaleString());
+    var td6 = $('<td>').text(addCommas(response.response[0].cases.recovered));
+    var td7 = $('<td>').text(addCommas(response.response[0].cases.active));
+    var td8 = $('<td>').text(response.response[0].cases.critical);
+    var td9 = $('<td>').text(addCommas(parseFloat(response.response[0].cases["1M_pop"])));
+    var td10 = $('<td>').text(addCommas(parseFloat(response.response[0].deaths["1M_pop"])));
+    var td11 = $('<td>').text(addCommas(response.response[0].tests.total));
+    var td12 = $('<td>').text(addCommas(parseFloat(response.response[0].tests["1M_pop"])));
+    var td13 = $('<td>').text(addCommas(response.response[0].population));
     var th1 = $('<th>').text('Country');
     tr1.append(th1,td1);
     var th2 = $('<th>').text('Total Cases');
@@ -298,7 +304,7 @@ $.ajax(settings).done(function (response) {
 });
 }
 
-$('#input').on("keyup", function(e){
+$('#search_input').on("keyup", function(e){
     if(e.keyCode == 13)
     {
         var input = $(this).val();
