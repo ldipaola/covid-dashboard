@@ -16,6 +16,14 @@ var settings = {
 		"x-rapidapi-key": "510f15014bmsh6ce0dd84c132d79p116676jsna21790da67cc"
 	}
 }
+$('#chart-container1').empty();
+$('#chart-container2').empty();
+$('#chart-container3').empty();
+$('#chart-container1').append($('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'));
+$('#chart-container2').append($('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'));
+$('#chart-container3').append($('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'));
+
+
 
 
 $.ajax(settings).done(function (response) {
@@ -111,11 +119,9 @@ $.ajax(settings).done(function (response) {
     $('#chart-container1').empty();
     $('#chart-container2').empty();
     $('#chart-container3').empty();
-    $('#chart-container4').empty();
     $('#chart-container1').append($('<canvas id="chart1" width="800" height="500">'));
     $('#chart-container2').append($('<canvas id="chart2" width="800" height="500">'));
     $('#chart-container3').append($('<canvas id="chart3" width="800" height="500">'));
-    $('#chart-container4').append($('<canvas id="chart4" width="800" height="500">'));
     var chart1 = new Chart($("#chart1"), {
         type: 'line',
         data: {
