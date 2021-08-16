@@ -31,7 +31,6 @@ async function renderMap() {
 
 
       covidStats.forEach((element) => {
-        console.log(element.timeline);
         const vaccineDoses =  element.timeline ? addCommas(element.timeline[Object.keys(element.timeline)[0]]) : 'Not available';
         new mapboxgl.Marker({})
           .setLngLat([element.countryInfo.long, element.countryInfo.lat])
