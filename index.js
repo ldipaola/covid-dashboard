@@ -7,8 +7,6 @@ function addCommas(number) {
 async function renderMap() {
   const covidStats = await fetch("https://corona.lmao.ninja/v2/countries?yesterday=&sort=").then((response) => response.json());
   const vaccineStats = await fetch("https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false").then((response) => response.json());
-  console.log(covidStats[0].hasOwnProperty('country'));
-  console.log(vaccineStats);
 
   for(let i = 0; i<covidStats.length; i++){
     for(let x = 0; x<vaccineStats.length; x++){
