@@ -1,19 +1,38 @@
-
-
-async function renderDashboard () {
-    try {
-        await renderMap();
-
-    } catch (err) {
-        console.error(err);
-    }
+function addCommas(number) {
+  if (number === null) return 0
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+
 async function renderMap() {
-  fetch("https://corona.lmao.ninja/v2/countries?yesterday=&sort=")
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((element) => {
+  const covidStats = await fetch("https://corona.lmao.ninja/v2/countries?yesterday=&sort=").then((response) => response.json());
+  const vaccineStats = await fetch("https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1&fullData=false").then((response) => response.json());
+  console.log(covidStats[0].hasOwnProperty('country'));
+  console.log(vaccineStats);
+
+  for(let i = 0; i<covidStats.length; i++){
+    for(let x = 0; x<vaccineStats.length; x++){
+      if(covidStats[i].country === vaccineStats[x].country){
+        covidStats[i] = { ...covidStats[i], timeline: vaccineStats[x].timeline};
+      }
+      
+    }
+  }
+  
+
+  mapboxgl.accessToken =
+    "pk.eyJ1IjoibHVrZXk4OCIsImEiOiJja2Z0eGI4eGcwdWhzMnRtdDc4Z2lrMTVoIn0.1C1oHpJeoVInABgwd7pVVg";
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/dark-v10", // stylesheet location
+    center: [134.273, -26.273], // starting position [lng, lat]
+    zoom: 1, // starting zoom
+  });
+
+
+      covidStats.forEach((element) => {
+        console.log(element.timeline);
+        const vaccineDoses =  element.timeline ? addCommas(element.timeline[Object.keys(element.timeline)[0]]) : 'Not available';
         new mapboxgl.Marker({})
           .setLngLat([element.countryInfo.long, element.countryInfo.lat])
           .setPopup(
@@ -25,35 +44,30 @@ async function renderMap() {
                   "<h5>" +
                   element.country +
                   '</h5><p class="popup-text">Cases: ' +
-                  element.cases.toLocaleString() +
+                  addCommas(element.cases) +
                   "</p>" +
                   '<p class="popup-text">active cases: ' +
-                  element.active.toLocaleString() +
+                  addCommas(element.active) +
                   "</p>" +
                   '<p class="popup-text">deaths: ' +
-                  element.deaths.toLocaleString() +
+                  addCommas(element.deaths) +
                   "</p>" +
                   '<p class="popup-text">population: ' +
-                  element.population.toLocaleString() +
-                  "</p>"
+                  addCommas(element.population) +
+                  "</p>" +
+                  '<p class="popup-text">Vaccine doses administered: ' +
+                  vaccineDoses +
+                  "</p>"                 
               )
+              
           )
           .addTo(map);
       });
-      renderStatistics(data);
-    });
-  mapboxgl.accessToken =
-    "pk.eyJ1IjoibHVrZXk4OCIsImEiOiJja2Z0eGI4eGcwdWhzMnRtdDc4Z2lrMTVoIn0.1C1oHpJeoVInABgwd7pVVg";
-  const map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mapbox/dark-v10", // stylesheet location
-    center: [134.273, -26.273], // starting position [lng, lat]
-    zoom: 1, // starting zoom
-  });
+      renderStatistics(covidStats);
 }
 
-async function renderStatistics(data) {
-    console.log(data);
+function renderStatistics(data) {
+    console.log(data[0].timeline[Object.keys(data[0].timeline)[0]]);
     const table = document.createElement('table');
     const tr = document.createElement('tr');
     const th1 = document.createElement('th');
@@ -86,8 +100,10 @@ async function renderStatistics(data) {
     document.getElementById('stat-sidebar').append(table);
 }
 
-renderDashboard();
+renderMap();
 
 
 document.getElementById("currentDate").textContent = moment().format('LLL');
+
+
 
